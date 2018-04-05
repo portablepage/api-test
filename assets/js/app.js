@@ -116,3 +116,20 @@ $(document).ready(function(){
 			return page;
 			
 		}
+
+	// this is needed for logging in
+	var $_GET = {};
+	document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
+		function decode(s) {
+			return decodeURIComponent(s.split("+").join(" "));
+		}
+
+		$_GET[decode(arguments[1])] = decode(arguments[2]);
+	});
+
+	var token = $_GET['access_token'];
+	if (typeof token !== 'undefined') {
+		//alert(token);
+		
+		sessionStorage.setItem('token', token);
+	}
