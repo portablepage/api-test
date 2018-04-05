@@ -1,10 +1,29 @@
 $(document).ready(function(){
 	
-			
-			
-			get_data(1);
+	// this is needed for logging in
+	var $_GET = {};
+	document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
+		function decode(s) {
+			return decodeURIComponent(s.split("+").join(" "));
+		}
+
+		$_GET[decode(arguments[1])] = decode(arguments[2]);
+	});
+
+	var token = $_GET['access_token'];
+	if (typeof token !== 'undefined') {
+		//alert(token);
+		
+		sessionStorage.setItem('token', token);
+		
+		// insert the CMS
+		$('#edit').html('<link href="https://api.dashpilot.com/v1/css/" rel="stylesheet"><script src="https://api.dashpilot.com/v1/js/?access_token='+token+'"></script>');
+		
+	}
 	
-		});
+	get_data(1);
+	
+});
 		
 		window.addEventListener("hashchange", get_data, false);
 		
@@ -117,23 +136,4 @@ $(document).ready(function(){
 			
 		}
 
-	// this is needed for logging in
-	var $_GET = {};
-	document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
-		function decode(s) {
-			return decodeURIComponent(s.split("+").join(" "));
-		}
-
-		$_GET[decode(arguments[1])] = decode(arguments[2]);
-	});
-
-	var token = $_GET['access_token'];
-	if (typeof token !== 'undefined') {
-		//alert(token);
-		
-		sessionStorage.setItem('token', token);
-		
-		// insert the CMS
-		$('#edit').html('<link href="https://api.dashpilot.com/v1/css/" rel="stylesheet"><script src="https://api.dashpilot.com/v1/js/?access_token='+token+'"></script>');
-		
-	}
+	
