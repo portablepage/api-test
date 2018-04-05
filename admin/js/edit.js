@@ -3,7 +3,7 @@ $(document).ready(function(){
 	
 	 
 	
-	
+	/*
 	// check for access token and store it
 	var $_GET = {};
 	document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
@@ -20,6 +20,7 @@ $(document).ready(function(){
 		
 		sessionStorage.setItem('token', token);
 	}
+	*/
 	
 	
 
