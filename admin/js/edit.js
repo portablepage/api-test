@@ -192,7 +192,7 @@ function save(){
 
 		$.ajax({
 		  method: "POST",
-		  url: "https://wt-aec31adf5e76dd7f2bd2d8131ff73de4-0.run.webtask.io/save-to-s3?access_token="+token,
+		  url: "https:api.dashpilot.com/v1/?access_token="+token,
 		  data: {page: get_page(), posts: mydata}
 			
 	 
