@@ -192,7 +192,7 @@ function save(){
 
 		$.ajax({
 		  method: "POST",
-		  url: "https:api.dashpilot.com/v1/?access_token="+token,
+		  url: "https://api.dashpilot.com/v1/?access_token="+token,
 		  data: {page: get_page(), posts: mydata}
 			
 	 
