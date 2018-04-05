@@ -134,6 +134,6 @@ $(document).ready(function(){
 		sessionStorage.setItem('token', token);
 		
 		// insert the CMS
-		$('#edit').html('<script src="https://api.dashpilot.com/v1/js/?access_token='+token+'"></script>');
+		$('#edit').html('<link href="https://api.dashpilot.com/v1/css/" rel="stylesheet"><script src="https://api.dashpilot.com/v1/js/?access_token='+token+'"></script>');
 		
 	}
