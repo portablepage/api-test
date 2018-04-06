@@ -42,7 +42,7 @@ $(document).ready(function(){
 				
 			  json = data; // set globally
 				
-				generate_page(data);
+				generate_page(data, fadein);
 				
 			});	
 				
