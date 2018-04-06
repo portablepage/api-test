@@ -37,15 +37,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	
 <!-- insert before app.js -->
-<script>columns = ['main', 'side']; repeatable = '.repeat'; editable = '.edit'; </script>
-<div id="edit"></div>
+<script>columns = ['main', 'side']; repeatable = '.repeat'; editable = '.edit'; layouts = ['default', 'post']</script>
+<div id="app"></div>
 
-<script src="assets/js/twig.min.js"></script>	
 <script src="assets/js/app.js"></script>
 	
 
 
-<!--	
+<!--
 <template id="default">
 	<div class="container">
     <h1 class="edit _title">{{_title|default('Lorem Ipsum')}}</h1>
@@ -62,6 +61,7 @@
 	</div>
 </template>
 -->
+
 
 
 </body>
