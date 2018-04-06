@@ -25,4 +25,8 @@ gulp.task('copy-data', function () {
 	gulp.src(['./data/**/*']).pipe(gulp.dest('./site/data'));
 });
 
-gulp.task('default', ['compile', 'copy-assets', 'copy-admin', 'copy-data']);
+gulp.task('copy-layouts', function () {
+	gulp.src(['./layouts/**/*']).pipe(gulp.dest('./site/layouts'));
+});
+
+gulp.task('default', ['compile', 'copy-assets', 'copy-admin', 'copy-data', 'copy-layouts']);
