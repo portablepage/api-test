@@ -5,9 +5,9 @@ var gulp = require('gulp');
 
 		var twig = require('gulp-twig-pipe');
  
-		gulp.src('./_data/*.json')
-			.pipe(twig('./_layouts/index.html'))
-			.pipe(gulp.dest('./_site/'));
+		gulp.src('./data/*.json')
+			.pipe(twig('./index.html'))
+			.pipe(gulp.dest('./site/'));
 
 	});
 
