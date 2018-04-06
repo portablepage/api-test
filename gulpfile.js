@@ -14,7 +14,7 @@ var gulp = require('gulp');
 	});
 
 gulp.task('copy', function () {
-	gulp.src(['assets/**/*']).pipe(gulp.dest('assets'));
+	gulp.src(['./assets/**/*']).pipe(gulp.dest('./site/assets'));
 });
 
 gulp.task('default', ['compile', 'copy']);
