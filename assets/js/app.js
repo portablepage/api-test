@@ -38,7 +38,7 @@ $(document).ready(function(){
 			
 			window.page = page;
 			
-			$.getJSON( "data/"+page+".json", function( data ) {
+			$.getJSON( "https://raw.githubusercontent.com/portablepage/api-test/master/data/"+page+".json", function( data ) {
 				
 			  json = data; // set globally
 				
