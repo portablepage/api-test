@@ -1,8 +1,9 @@
+<div id="default">
+	<section id="{{item.id}}" class="repeat" data-template="post">
+		<div class="container">
 
-<section id="{{item.id}}" class="repeat" data-template="post">
-	<div class="container">
-
-    <h1 class="edit _title">{{item._title|default('Lorem Ipsum')}}</h1>
-	<div class="edit _body">{{item._body|raw}}</div>
-	</div>
-</section>
+	    <h1 class="edit _title">{{item._title|default('Lorem Ipsum')}}</h1>
+		<div class="edit _body">{{item._body|raw}}</div>
+		</div>
+	</section>
+</div>
