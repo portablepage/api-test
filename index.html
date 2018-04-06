@@ -26,9 +26,9 @@
 	
 	<main>
 		
-		<div id="loader-wrapper">
-			<div id="loader"></div>
-		</div>
+		{% for item in main %}
+			{% include item.template ~ '.html' %}
+		{% endfor %}
 		
 	</main>
 	
