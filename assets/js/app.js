@@ -21,7 +21,10 @@ $(document).ready(function(){
 		
 	}
 	
+	// changed this to only display when logged in
+	if(sessionStorage.getItem('token') !== null){
 	get_data(1);
+	}
 	
 });
 		
