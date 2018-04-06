@@ -31,7 +31,7 @@ $(document).ready(function(){
 		$.get( "layouts/"+layout+".html", function( data ) {
 		  $( "#app" ).append( data );
 		});
-	});
+	}));
 	
 	
 });
