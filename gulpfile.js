@@ -13,8 +13,12 @@ var gulp = require('gulp');
 
 	});
 
-gulp.task('copy', function () {
+gulp.task('copy-assets', function () {
 	gulp.src(['./assets/**/*']).pipe(gulp.dest('./site/assets'));
 });
 
-gulp.task('default', ['compile', 'copy']);
+gulp.task('copy-admin', function () {
+	gulp.src(['./admin/**/*']).pipe(gulp.dest('./site/admin'));
+});
+
+gulp.task('default', ['compile', 'copy-assets', 'copy-admin']);
