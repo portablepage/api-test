@@ -9,9 +9,13 @@ var gulp = require('gulp');
 			.pipe(twig('./index.html'))
 			.pipe(gulp.dest('./site/'));
 		
-		gulp.src(['assets/**/*']).pipe(gulp.dest('assets'));
+		
 
 	});
 
-gulp.task('default', ['compile']);
+gulp.task('copy', function () {
+	gulp.src(['assets/**/*']).pipe(gulp.dest('assets'));
+});
+
+gulp.task('default', ['compile', 'copy']);
 
