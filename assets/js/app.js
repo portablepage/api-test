@@ -26,6 +26,13 @@ $(document).ready(function(){
 	get_data(1);
 	}
 	
+	// preload the templates
+	$.each(layouts, (function( index, layout ) {
+		$.get( "layouts/"+layout+".html", function( data ) {
+		  $( "#app" ).append( data );
+		});
+	});
+	
 	
 });
 		
