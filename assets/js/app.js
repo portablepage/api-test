@@ -38,13 +38,24 @@ $(document).ready(function(){
 			
 			window.page = page;
 			
-			$.getJSON( "data/"+page+".json", function( data ) {
-				
-			  json = data; // set globally
-				
+			
+			// check if the page is stored locally
+			if(sessionStorage.getItem(page) !== null){
+				var data = sessionStorage.getItem(page);
 				generate_page(data, fadein);
 				
-			});	
+				console.log('local');
+				
+			}else{
+			
+				$.getJSON( "data/"+page+".json", function( data ) {
+
+				  json = data; // set globally
+
+					generate_page(data, fadein);
+
+				});
+			}
 				
 			
 		}
