@@ -18,4 +18,3 @@ gulp.task('copy', function () {
 });
 
 gulp.task('default', ['compile', 'copy']);
-
