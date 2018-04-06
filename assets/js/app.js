@@ -49,7 +49,7 @@ $(document).ready(function(){
 			
 		}
 				  
-		function generate_page(data){
+		function generate_page(data, fadein){
 				
 			  var items = [];
 				
