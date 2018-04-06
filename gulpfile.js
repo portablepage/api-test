@@ -21,4 +21,8 @@ gulp.task('copy-admin', function () {
 	gulp.src(['./admin/**/*']).pipe(gulp.dest('./site/admin'));
 });
 
-gulp.task('default', ['compile', 'copy-assets', 'copy-admin']);
+gulp.task('copy-data', function () {
+	gulp.src(['./data/**/*']).pipe(gulp.dest('./site/data'));
+});
+
+gulp.task('default', ['compile', 'copy-assets', 'copy-admin', 'copy-data']);
