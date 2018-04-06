@@ -8,6 +8,8 @@ var gulp = require('gulp');
 		gulp.src('./data/*.json')
 			.pipe(twig('./index.html'))
 			.pipe(gulp.dest('./site/'));
+		
+		gulp.src(['assets/**/*']).pipe(gulp.dest('assets'));
 
 	});
 
