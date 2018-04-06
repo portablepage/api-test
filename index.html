@@ -27,7 +27,7 @@
 	<main>
 		
 		{% for item in main %}
-			{% include item.template ~ '.html' %}
+			{% include 'layouts/' ~ item.template ~ '.html' %}
 		{% endfor %}
 		
 	</main>
