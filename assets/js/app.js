@@ -38,7 +38,7 @@ $(document).ready(function(){
 			
 			window.page = page;
 			
-			$.getJSON( "https://raw.githubusercontent.com/portablepage/api-test/master/data/"+page+".json?"+Math.floor(Math.random() * Math.floor(99999)), function( data ) {
+			$.getJSON( "data/"+page+".json", function( data ) {
 				
 			  json = data; // set globally
 				
