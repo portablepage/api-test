@@ -42,6 +42,15 @@ $(document).ready(function(){
 				
 			  json = data; // set globally
 				
+				generate_page(data);
+				
+			});	
+				
+			
+		}
+				  
+		function generate_page(data){
+				
 			  var items = [];
 				
 			  
@@ -121,8 +130,8 @@ $(document).ready(function(){
 				init();
 			}
 				
-			});
-		}
+			
+		}		
 
 		function get_page(){
 			
