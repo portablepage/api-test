@@ -42,6 +42,7 @@ $(document).ready(function(){
 			// check if the page is stored locally
 			if(sessionStorage.getItem(page) !== null){
 				var data = sessionStorage.getItem(page);
+				data = JSON.parse(data);
 				generate_page(data, fadein);
 				
 				console.log(data);
