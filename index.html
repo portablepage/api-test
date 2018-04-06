@@ -47,17 +47,17 @@
 	
 <template id="default">
 	<div class="container">
-    <h1 class="edit _title"></h1>
-	<h3 class="edit _subtitle"></h3>
-    <div class="edit _body"></div>
+    <h1 class="edit _title">{{_title|default('Lorem Ipsum')}}</h1>
+	<h3 class="edit _subtitle">{{_subtitle|default('With a subtitle')}}</h3>
+    <div class="edit _body">{{{_body}}}</div>
 	</div>
 </template>
 	
 <template id="post">
 	<div class="container">
 
-    <h1 class="edit _title"></h1>
-	<div class="edit _body"></div>
+    <h1 class="edit _title">{{_title|default('Lorem Ipsum')}}</h1>
+	<div class="edit _body">{{{_body}}}</div>
 	</div>
 </template>
 	
