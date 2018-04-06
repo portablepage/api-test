@@ -29,7 +29,7 @@ $(document).ready(function(){
 	// preload the templates
 	$.each(layouts, (function( index, layout ) {
 		$.get( "layouts/"+layout+".html", function( data ) {
-		  $( "#app" ).append( data );
+		  $( "#app" ).append('<template id="'+layout+'">' + data + '</div>');
 		});
 	}));
 	
@@ -93,7 +93,7 @@ $(document).ready(function(){
 					 var templ_id = 'default';
 				  }
 				  
-				  items.push( '<section id="'+data[column_name][index]['id']+'" data-template="'+templ_id+'" class="repeat">' );
+				  //items.push( '<section id="'+data[column_name][index]['id']+'" data-template="'+templ_id+'" class="repeat">' );
 				  
 				  
 				//  var source   = document.getElementById(templ_id).innerHTML;  
@@ -106,7 +106,7 @@ $(document).ready(function(){
 					items.push(html);
 				  
 				 
-				  items.push( '</section>' );
+				 // items.push( '</section>' );
 			  }));
 			
 		}));	
