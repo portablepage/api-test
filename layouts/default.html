@@ -1,0 +1,7 @@
+<section id="{{item.id}}" class="repeat" data-template="default">
+	<div class="container">
+    <h1 class="edit _title">{{item._title|default('Lorem Ipsum')}}</h1>
+	<h3 class="edit _subtitle">{{item._subtitle|default('With a subtitle')}}</h3>
+    <div class="edit _body">{{item._body|raw}}</div>
+	</div>
+</section>
