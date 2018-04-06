@@ -88,7 +88,7 @@ $(document).ready(function(){
 					 var templ_id = 'default';
 				  }
 				  
-				  //items.push( '<section id="'+data[column_name][index]['id']+'" data-template="'+templ_id+'" class="repeat">' );
+				  items.push( '<section id="'+data[column_name][index]['id']+'" data-template="'+templ_id+'" class="repeat">' );
 				  
 				  
 				//  var source   = document.getElementById(templ_id).innerHTML;  
@@ -101,7 +101,7 @@ $(document).ready(function(){
 					items.push(html);
 				  
 				 
-				 // items.push( '</section>' );
+				 items.push( '</section>' );
 			  }));
 			
 		}));	
