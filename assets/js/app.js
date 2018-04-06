@@ -45,7 +45,7 @@ $(document).ready(function(){
 				data = JSON.parse(data);
 				generate_page(data, fadein);
 				
-				console.log(data);
+				console.log('local');
 				
 			}else{
 			
