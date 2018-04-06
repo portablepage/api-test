@@ -44,7 +44,7 @@ $(document).ready(function(){
 				var data = sessionStorage.getItem(page);
 				generate_page(data, fadein);
 				
-				console.log('local');
+				console.log(data);
 				
 			}else{
 			
