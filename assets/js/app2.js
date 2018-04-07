@@ -20,7 +20,6 @@ $(document).ready(function(){
 		
 	}
 	
-	console.log(get_page());
 	
 	if (sessionStorage.getItem('token') !== null) {
 	// insert the CMS
