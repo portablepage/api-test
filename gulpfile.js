@@ -16,7 +16,7 @@ gulp.task('compile-menu', function () {
  
 	return gulp.src('./config/*.json')
 		.pipe(twig('./index.html'))
-		.pipe(gulp.dest('./temp.html'));
+		.pipe(gulp.dest('./'));
 	
 	
 
@@ -26,7 +26,7 @@ gulp.task('compile-pages', function () {
 	'use strict';
  
 	return gulp.src('./data/*.json')
-		.pipe(twig('./temp.html'))
+		.pipe(twig('./pages.html'))
 		.pipe(gulp.dest('./site/'));
 
 });
