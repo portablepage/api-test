@@ -1,9 +1,11 @@
 var gulp = require('gulp');
 var twig = require('gulp-twig-pipe');
+var concat_json = require("gulp-concat-json");
 
 gulp.task('compile', function () {
 	
 	gulp.src('./data/*.json')
+		.pipe(concat_json("./config/pages.json"))
 		.pipe(twig('./index.html'))
 		.pipe(gulp.dest('./site/'));
 
