@@ -1,6 +1,15 @@
 var gulp = require('gulp');
 var twig = require('gulp-twig-pipe');
 
+var runSequence = require('run-sequence');
+
+gulp.task('compile-twig', function(done) {
+    runSequence('compile-menu', 'compile-pages', function() {
+        console.log('Run something else');
+        done();
+    });
+});
+
 
 gulp.task('compile-menu', function () {
 	'use strict';
@@ -13,7 +22,6 @@ gulp.task('compile-menu', function () {
 
 });
 
-// second param indicates the task waits for 'compile-menu' to finish
 gulp.task('compile-pages', function () {
 	'use strict';
  
@@ -39,4 +47,4 @@ gulp.task('copy-layouts', function () {
 	gulp.src(['./layouts/**/*']).pipe(gulp.dest('./site/layouts'));
 });
 
-gulp.task('default', ['compile-menu', 'compile-pages', 'copy-assets', 'copy-admin', 'copy-data', 'copy-layouts']);
+gulp.task('default', ['compile-twig', 'copy-assets', 'copy-admin', 'copy-data', 'copy-layouts']);
