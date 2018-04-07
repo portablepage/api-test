@@ -39,6 +39,10 @@ $(document).ready(function(){
 			
 			var page = window.location.pathname.replace('/', '');
 			
+			if(page==''){
+				page = 'index';
+			}
+			
 			return page;
 			
 		}
