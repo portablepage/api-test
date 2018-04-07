@@ -15,7 +15,7 @@ gulp.task('compile', function(done) {
 gulp.task('combine-json', function () {
 	
 	gulp.src('./data/*.json')
-		.pipe(concat_json("test.json"))
+		.pipe(concat_json("alldata.json"))
 		.pipe(gulp.dest('./site/'));
 
 });
