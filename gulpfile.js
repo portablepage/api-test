@@ -6,7 +6,7 @@ var runSequence = require('run-sequence');
 
 
 gulp.task('compile', function(done) {
-    runSequence('compile-menu', 'compile-pages', function() {
+    runSequence('compile-menu', 'compile-pages', 'copy-layouts' function() {
         console.log('Run something else');
         done();
     });
@@ -23,8 +23,8 @@ gulp.task('compile', function(done) {
 gulp.task('compile-menu', function () {
 	
 	gulp.src('./config/*.json')
-		.pipe(twig('./nav.html'))
-		.pipe(gulp.dest('./site/'));
+		.pipe(twig('./layouts/nav.html'))
+		.pipe(gulp.dest('./layouts/'));
 
 });
 
@@ -52,4 +52,4 @@ gulp.task('copy-layouts', function () {
 	gulp.src(['./layouts/**/*']).pipe(gulp.dest('./site/layouts'));
 });
 
-gulp.task('default', ['compile', 'copy-assets', 'copy-admin', 'copy-data', 'copy-layouts']);
+gulp.task('default', ['compile', 'copy-assets', 'copy-admin', 'copy-data']);
