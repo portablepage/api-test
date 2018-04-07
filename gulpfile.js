@@ -11,7 +11,8 @@ gulp.task('compile-menu', function () {
 
 });
 
-gulp.task('compile-pages', function () {
+// second param indicates the task waits for 'compile-menu' to finish
+gulp.task('compile-pages', ['compile-menu'], function () {
 	'use strict';
  
 	gulp.src('./data/*.json')
