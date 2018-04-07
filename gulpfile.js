@@ -2,12 +2,14 @@ var gulp = require('gulp');
 var twig = require('gulp-twig-pipe');
 
 
-gulp.task('compile-menu', function () {
+gulp.task('compile-menu', function (cb) {
 	'use strict';
  
 	gulp.src('./config/pages.json')
 		.pipe(twig('./index.html'))
 		.pipe(gulp.dest('./temp.html'));
+	
+	cb(err); // added callback
 
 });
 
