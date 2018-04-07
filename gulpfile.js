@@ -9,7 +9,7 @@ gulp.task('compile-menu', function (cb) {
 		.pipe(twig('./index.html'))
 		.pipe(gulp.dest('./temp.html'));
 	
-	cb(err); // added callback
+	cb(); // added callback
 
 });
 
