@@ -1,0 +1,16 @@
+{
+    "pages": [
+        {
+            "title": "Home",
+            "url": "index"
+        },
+      {
+            "title": "Abouts",
+            "url": "about"
+        },
+      {
+            "title": "Contact",
+            "url": "contact"
+        }
+    ]
+}
