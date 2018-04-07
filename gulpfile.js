@@ -6,7 +6,7 @@ gulp.task('compile', function () {
 	
 	gulp.src('./data/*.json')
 		.pipe(concat_json("./config/pages.json"))
-		.pipe(twig('./index.html'))
+		// .pipe(twig('./index.html'))
 		.pipe(gulp.dest('./site/'));
 
 });
