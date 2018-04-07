@@ -15,7 +15,7 @@ gulp.task('compile', function(done) {
 gulp.task('combine-json', function () {
 	
 	gulp.src('./data/*.json')
-		.pipe(concat_json("./config/pages.json"))
+		.pipe(concat_json("test.json"))
 		.pipe(gulp.dest('./site/'));
 
 });
@@ -44,4 +44,4 @@ gulp.task('copy-layouts', function () {
 	gulp.src(['./layouts/**/*']).pipe(gulp.dest('./site/layouts'));
 });
 
-gulp.task('default', ['compile', 'copy-assets', 'copy-admin', 'copy-layouts']);
+gulp.task('default', ['compile', 'copy-assets', 'copy-admin', 'copy-data', 'copy-layouts']);
