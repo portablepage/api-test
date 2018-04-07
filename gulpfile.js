@@ -6,7 +6,7 @@ var concat_json = require("gulp-concat-json");
 
 
 gulp.task('compile', function(done) {
-    runSequence('combine-json', 'compile-twig', function() {
+    runSequence('combine-json', 'compile-twig', 'copy-data', function() {
         console.log('Run something else');
         done();
     });
@@ -44,4 +44,4 @@ gulp.task('copy-layouts', function () {
 	gulp.src(['./layouts/**/*']).pipe(gulp.dest('./site/layouts'));
 });
 
-gulp.task('default', ['compile', 'copy-assets', 'copy-admin', 'copy-data', 'copy-layouts']);
+gulp.task('default', ['compile', 'copy-assets', 'copy-admin', 'copy-layouts']);
