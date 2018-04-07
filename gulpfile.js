@@ -2,22 +2,22 @@ var gulp = require('gulp');
 var twig = require('gulp-twig-pipe');
 
 
-gulp.task('compile-menu', function (cb) {
+gulp.task('compile-menu', function () {
 	'use strict';
  
-	gulp.src('./config/pages.json')
+	return gulp.src('./config/pages.json')
 		.pipe(twig('./index.html'))
 		.pipe(gulp.dest('./temp.html'));
 	
-	cb(); // added callback
+	
 
 });
 
 // second param indicates the task waits for 'compile-menu' to finish
-gulp.task('compile-pages', ['compile-menu'], function () {
+gulp.task('compile-pages', function () {
 	'use strict';
  
-	gulp.src('./data/*.json')
+	return gulp.src('./data/*.json')
 		.pipe(twig('./temp.html'))
 		.pipe(gulp.dest('./site/'));
 
