@@ -1,26 +1,34 @@
 var gulp = require('gulp');
 var twig = require('gulp-twig-pipe');
 var runSequence = require('run-sequence');
-var concat_json = require("gulp-concat-json");
+//var concat_json = require("gulp-concat-json");
 
 
 
 gulp.task('compile', function(done) {
-    runSequence('combine-json', 'compile-twig', function() {
+    runSequence('compile-menu', 'compile-pages', function() {
         console.log('Run something else');
         done();
     });
 });
 
-gulp.task('combine-json', function () {
+//gulp.task('combine-json', function () {
 	
-	gulp.src('./data/*.json')
-		.pipe(concat_json("alldata.json"))
+	//gulp.src('./data/*.json')
+		//.pipe(concat_json("alldata.json"))
+		//.pipe(gulp.dest('./site/'));
+
+//});
+
+gulp.task('compile-menu', function () {
+	
+	gulp.src('./config/*.json')
+		.pipe(twig('./nav.html'))
 		.pipe(gulp.dest('./site/'));
 
 });
 
-gulp.task('compile-twig', function () {
+gulp.task('compile-pages', function () {
 	
 	gulp.src('./data/*.json')
 		.pipe(twig('./index.html'))
