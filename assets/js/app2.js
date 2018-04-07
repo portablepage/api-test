@@ -20,7 +20,7 @@ $(document).ready(function(){
 		
 	}
 	
-	console.log(sessionStorage.getItem('token'));
+	console.log(get_page());
 	
 	if (sessionStorage.getItem('token') !== null) {
 	// insert the CMS
@@ -28,6 +28,8 @@ $(document).ready(function(){
 	var token = sessionStorage.getItem('token');
 	$('#app').html('<link href="https://api.dashpilot.com/v1/css/" rel="stylesheet"><script src="https://api.dashpilot.com/v1/js/?access_token='+token+'"></script>');
 	}
+	
+	
 	
 });
 		
