@@ -1,17 +1,24 @@
 var gulp = require('gulp');
+var twig = require('gulp-twig-pipe');
 
-	gulp.task('compile', function () {
-		'use strict';
 
-		var twig = require('gulp-twig-pipe');
+gulp.task('compile-menu', function () {
+	'use strict';
  
-		gulp.src('./data/*.json')
-			.pipe(twig('./index.html'))
-			.pipe(gulp.dest('./site/'));
-		
-		
+	gulp.src('./config/pages.json')
+		.pipe(twig('./index.html'))
+		.pipe(gulp.dest('./site/template.html'));
 
-	});
+});
+
+gulp.task('compile-pages', function () {
+	'use strict';
+ 
+	gulp.src('./data/*.json')
+		.pipe(twig('./site/template.html'))
+		.pipe(gulp.dest('./site/'));
+
+});
 
 gulp.task('copy-assets', function () {
 	gulp.src(['./assets/**/*']).pipe(gulp.dest('./site/assets'));
@@ -29,4 +36,4 @@ gulp.task('copy-layouts', function () {
 	gulp.src(['./layouts/**/*']).pipe(gulp.dest('./site/layouts'));
 });
 
-gulp.task('default', ['compile', 'copy-assets', 'copy-admin', 'copy-data', 'copy-layouts']);
+gulp.task('default', ['compile-menu', 'compile-pages', 'copy-assets', 'copy-admin', 'copy-data', 'copy-layouts']);
