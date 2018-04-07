@@ -16,11 +16,14 @@ $(document).ready(function(){
 		
 		sessionStorage.setItem('token', token);
 		
-		// insert the CMS
-		$('#app').html('<link href="https://api.dashpilot.com/v1/css/" rel="stylesheet"><script src="https://api.dashpilot.com/v1/js/?access_token='+token+'"></script>');
+		
 		
 	}
-
+	
+	if (sessionStorage.getItem('token') !== null) {
+	// insert the CMS
+	$('#app').html('<link href="https://api.dashpilot.com/v1/css/" rel="stylesheet"><script src="https://api.dashpilot.com/v1/js/?access_token='+token+'"></script>');
+	}
 	
 });
 		
