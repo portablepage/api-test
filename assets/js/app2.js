@@ -37,11 +37,7 @@ $(document).ready(function(){
 
 		function get_page(){
 			
-			var page = window.location.hash.substr(1).replace('/', ''); // set globally
-			
-			if(page==''){
-			   page = 'index';
-			}
+			var page = window.location.pathname.replace('/', '');
 			
 			return page;
 			
