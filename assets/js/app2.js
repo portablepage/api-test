@@ -20,6 +20,8 @@ $(document).ready(function(){
 		
 	}
 	
+	console.log(sessionStorage.getItem('token'));
+	
 	if (sessionStorage.getItem('token') !== null) {
 	// insert the CMS
 	$('#app').html('<link href="https://api.dashpilot.com/v1/css/" rel="stylesheet"><script src="https://api.dashpilot.com/v1/js/?access_token='+token+'"></script>');
