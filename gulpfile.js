@@ -14,7 +14,7 @@ gulp.task('compile-twig', function(done) {
 gulp.task('compile-menu', function () {
 	'use strict';
  
-	return gulp.src('./config/pages.json')
+	return gulp.src('./config/*.json')
 		.pipe(twig('./index.html'))
 		.pipe(gulp.dest('./temp.html'));
 	
