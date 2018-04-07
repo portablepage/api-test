@@ -1,17 +1,13 @@
 var gulp = require('gulp');
+var twig = require('gulp-twig-pipe');
 
-	gulp.task('compile', function () {
-		'use strict';
+gulp.task('compile', function () {
+	
+	gulp.src('./data/*.json')
+		.pipe(twig('./index.html'))
+		.pipe(gulp.dest('./site/'));
 
-		var twig = require('gulp-twig-pipe');
- 
-		gulp.src('./data/*.json')
-			.pipe(twig('./index.html'))
-			.pipe(gulp.dest('./site/'));
-		
-		
-
-	});
+});
 
 gulp.task('copy-assets', function () {
 	gulp.src(['./assets/**/*']).pipe(gulp.dest('./site/assets'));
