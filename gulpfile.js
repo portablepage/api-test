@@ -5,7 +5,7 @@ var twig = require('gulp-twig-pipe');
 gulp.task('compile-menu', function () {
 	'use strict';
  
-	return gulp.src('./config/pages.json')
+	gulp.src('./config/pages.json')
 		.pipe(twig('./index.html'))
 		.pipe(gulp.dest('./temp.html'));
 
