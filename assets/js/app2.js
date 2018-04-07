@@ -31,20 +31,4 @@ $(document).ready(function(){
 	
 	
 	
-});
-		
-	
-
-		function get_page(){
-			
-			var page = window.location.pathname.replace('/', '');
-			
-			if(page==''){
-				page = 'index';
-			}
-			
-			return page;
-			
-		}
-
-	
+});	
