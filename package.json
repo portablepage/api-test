@@ -1,7 +1,6 @@
 {
   "dependencies": {
 	"gulp": "latest",
-  	"gulp-twig-pipe": "latest",
-	"run-sequence": "latest"
+  	"gulp-twig-pipe": "latest"
   }
 }
