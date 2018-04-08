@@ -6,7 +6,7 @@ var runSequence = require('run-sequence');
 
 
 gulp.task('compile', function(done) {
-    runSequence('compile-menu', 'compile-pages', 'copy-layouts', function() {
+    runSequence('compile-pages', 'copy-layouts', function() {
         console.log('Run something else');
         done();
     });
