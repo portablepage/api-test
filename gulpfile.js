@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var twig = require('gulp-twig-pipe');
 var data = require('gulp-data');
-var fs = require('file-system');
 var mergeJson = require('merge-json');
 var tap = require('gulp-tap');
 
@@ -11,8 +10,7 @@ gulp.task('compile', function () {
 	
 	gulp.src('./data/*.json')
 		.pipe(tap(function(file, t) {
-		    console.log(file.path);
-		    curFile = file.path;
+		    curFile = file.path; // set current file as global var to use it in the next function
 		 }))
 		.pipe(data(() => mergeJson.merge(
 			require('./config/pages.json'),
