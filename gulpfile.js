@@ -2,12 +2,15 @@ var gulp = require('gulp');
 var twig = require('gulp-twig-pipe');
 var data = require('gulp-data');
 var fs = require('file-system');
+var mergeJson = require('merge-json');
 
 
 gulp.task('compile', function () {
 	
 	gulp.src('./data/*.json')
-		.pipe(data(function(file) { return JSON.parse(fs.readFileSync('./config/pages.json')); })) // adding in the data from pages config
+		.pipe(data(() => mergeJson.merge(require('./config/pages.json'),
+			require('./data/index.json')
+		)))
 		.pipe(twig('./index.html', {dataSource: 'data'}))
 		.pipe(gulp.dest('./site/'));
 
