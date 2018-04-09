@@ -8,7 +8,7 @@ gulp.task('compile', function () {
 	
 	gulp.src('./data/*.json')
 		.pipe(data(function(file) { return JSON.parse(fs.readFileSync('./config/pages.json')); })) // adding in the data from pages config
-		.pipe(twig('./index.html'))
+		.pipe(twig('./index.html', {dataSource: 'data'}))
 		.pipe(gulp.dest('./site/'));
 
 });
