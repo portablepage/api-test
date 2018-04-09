@@ -7,7 +7,7 @@ var fs = require('file-system');
 gulp.task('compile', function () {
 	
 	gulp.src('./data/*.json')
-		.pipe(data(function(file) { return JSON.parse(fs.readFileSync('./config/pages.json')); })) // adding in the data from pages config
+		.pipe(data(function(file) { return fs.readFileSync('./config/pages.json'); })) // adding in the data from pages config
 		.pipe(twig('./index.html'))
 		.pipe(gulp.dest('./site/'));
 
