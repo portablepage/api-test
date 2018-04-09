@@ -23,7 +23,7 @@ gulp.task('compile', function () {
 	gulp.src('./data/*.json')
 		.pipe(data(() => mergeJson.merge(
 			require('./config/pages.json'),
-			require(curFile(es)) // get the current json file from the data folder
+			require('./config/index.json') // get the current json file from the data folder
 		)))
 		.pipe(twig('./index.html', {dataSource: 'data'}))
 		.pipe(gulp.dest('./site/'));
