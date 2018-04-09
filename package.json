@@ -1,8 +1,8 @@
 {
-  "dependencies": {
-	"gulp": "latest",
-  	"gulp-twig-pipe": "latest",
-	"run-sequence": "latest",
-	"gulp-concat-json": "latest"
-  }
+ "dependencies": {
+  "gulp": "latest",
+  "gulp-twig-pipe": "latest",
+  "gulp-data": "latest",
+  "file-system": "latest"
+ }
 }
