@@ -3,6 +3,7 @@
   "gulp": "latest",
   "gulp-twig-pipe": "latest",
   "gulp-data": "latest",
-  "file-system": "latest"
+  "file-system": "latest",
+  "merge-json": "latest"
  }
 }
