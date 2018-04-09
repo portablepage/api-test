@@ -10,8 +10,8 @@ var log = require('gulp-util').log;
 
 var curFile = function(es) {
   return es.map(function(file, cb) {
-    log(file.path);
-    return cb();
+    
+    return log(file.path);
   });
 };
 
