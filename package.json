@@ -4,6 +4,7 @@
   "gulp-twig-pipe": "latest",
   "gulp-data": "latest",
   "file-system": "latest",
-  "merge-json": "latest"
+  "merge-json": "latest",
+  "gulp-tap": "latest"
  }
 }
