@@ -3,27 +3,20 @@ var twig = require('gulp-twig-pipe');
 var data = require('gulp-data');
 var fs = require('file-system');
 var mergeJson = require('merge-json');
-
-var es = require('event-stream');
-
-var log = require('gulp-util').log;
-
-var curFile = function(es) {
-  return es.map(function(file, cb) {
-    
-    return log(file.path);
-  });
-};
-
+var tap = require('gulp-tap');
 
 gulp.task('compile', function () {
 	
 	
 	
 	gulp.src('./data/*.json')
+		.pipe(tap(function(file, t) {
+		    console.log(file.path);
+		    var curFile = file.path;
+		 }))
 		.pipe(data(() => mergeJson.merge(
 			require('./config/pages.json'),
-			require('./config/index.json') // get the current json file from the data folder
+			require(curFile) // get the current json file from the data folder
 		)))
 		.pipe(twig('./index.html', {dataSource: 'data'}))
 		.pipe(gulp.dest('./site/'));
