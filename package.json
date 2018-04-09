@@ -5,7 +5,7 @@
   "gulp-data": "latest",
   "file-system": "latest",
   "merge-json": "latest",
-  "gulp-stream": "latest",
+  "event-stream": "latest",
   "gulp-util": "latest"
  }
 }
