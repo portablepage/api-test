@@ -12,7 +12,7 @@ gulp.task('compile', function () {
 	gulp.src('./data/*.json')
 		.pipe(tap(function(file, t) {
 		    console.log(file.path);
-		    var curFile = file.path;
+		    curFile = file.path;
 		 }))
 		.pipe(data(() => mergeJson.merge(
 			require('./config/pages.json'),
