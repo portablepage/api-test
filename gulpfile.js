@@ -1,36 +1,13 @@
 var gulp = require('gulp');
 var twig = require('gulp-twig-pipe');
-var runSequence = require('run-sequence');
-//var concat_json = require("gulp-concat-json");
+var data = require('gulp-data');
+var fs = require('file-system');
 
 
-
-gulp.task('compile', function(done) {
-    runSequence('compile-pages', 'copy-layouts', function() {
-        console.log('Run something else');
-        done();
-    });
-});
-
-//gulp.task('combine-json', function () {
-	
-	//gulp.src('./data/*.json')
-		//.pipe(concat_json("alldata.json"))
-		//.pipe(gulp.dest('./site/'));
-
-//});
-
-gulp.task('compile-menu', function () {
-	
-	gulp.src('./config/*.json')
-		.pipe(twig('./layouts/nav.html'))
-		.pipe(gulp.dest('./layouts/'));
-
-});
-
-gulp.task('compile-pages', function () {
+gulp.task('compile', function () {
 	
 	gulp.src('./data/*.json')
+		.pipe(data(function(file) { return JSON.parse(fs.readFileSync('./config/pages.json')); })) // adding in the data from pages config
 		.pipe(twig('./index.html'))
 		.pipe(gulp.dest('./site/'));
 
@@ -52,4 +29,4 @@ gulp.task('copy-layouts', function () {
 	gulp.src(['./layouts/**/*']).pipe(gulp.dest('./site/layouts'));
 });
 
-gulp.task('default', ['compile', 'copy-assets', 'copy-admin', 'copy-data']);
+gulp.task('default', ['compile', 'copy-assets', 'copy-admin', 'copy-data', 'copy-layouts']);
