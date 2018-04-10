@@ -2,9 +2,9 @@
  "dependencies": {
   "gulp": "latest",
   "gulp-twig-pipe": "latest",
-  "gulp-data": "latest",
-  "file-system": "latest",
-  "merge-json": "latest",
-  "gulp-tap": "latest"
+  "gulp-jsoncombine": "latest",
+  "fs": "latest",
+  "path": "latest",
+  "merge-stream": "latest"
  }
 }
